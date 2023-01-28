@@ -24,15 +24,13 @@ def profitloss_function():
     everyday_surplus= True
     # Creating an empty list to store the final statement 
     statement= []
-    # A for loop is created to loop index of the net profits in the list stored by a variable called netprofit from the second profit in the list to the last profit in the list
     for index in range(1, len(netprofit)):
     # The previous net profit is extracted from the netprofit list using the current loop's index-1 and converted to integer 
         previous_netprofit= int(netprofit[index-1][1])
     # The current net profit is extracted from the netprofit list and converted into an integer 
         current_netprofit= int(netprofit[index][1])
-    # Difference between the current and previous net profit is calculated by substracting previous_netprofit from current_netprofit and stored in a variable called diff
         diff= current_netprofit - previous_netprofit
-    # If at any loop, diff is less than zero
+
         if diff < 0:
     # False will be assigned to everyday_surplus
             everyday_surplus = False
