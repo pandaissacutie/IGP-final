@@ -1,39 +1,45 @@
-# Line 1 to line 15 is correct, please do not edit anything - Jiaxin
+# Importing path from path library 
 from pathlib import Path
+# Importing csv file 
 import csv
 
+# Creating the file to a csv file
 fp = Path.cwd()/"csv_reports"/"cash-on-hand-usd.csv"
 
+# Read the csv file to append day and cash on hand and from the csv.
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
+    # Skip header
     next(reader) 
 
-   
+# Creating an empty list to store day and cash on hand
     cash_on_hand = [] 
-
+# Append day and cash on hand as a list back to each empty list
     for row in reader:
         cash_on_hand.append([row[0], row[1]])
 
-
+# Creating a function called coh_function
 def coh_function(): 
     '''
     This function does not accepts any parameter 
-    This function will calculate the difference in Cash-on-Hand 
-    If the cash on hand on the current day is lower than the previous day, this function will print cash deficit on the current day and the difference in cash on hand.
-    If the cash on hand on the current day is higher than the previous day, the cash on each day will be higher than the previous day.
+    This function will calculate the difference in Cash-on-Hand and check whether everyday no deficit is true or false
+    If the cash on hand on the current day is lower than the previous day (everyday no deficit is False), this function will return cash deficit on the current day and the difference in cash on hand.
+    If all the cash on hand on the current day is higher than the previous day (everyday deficit is True), the cash on each day will be higher than the previous day.
     '''
 
     # Assigning True to a variable called everyday_coh to check if everyday no deficit is true or false
     everyday_nodeficit= True
     # Creating an empty list to store the final statement 
     statement= []
+    # A for loop is created to loop the second item's position to the last items's position of the cash on hand list
     for index in range(1, len(cash_on_hand)):
     # The previous cash on hand is extracted from the cash_on_hand list using the current loop's index-1 and converted to integer 
         previous_coh= int(cash_on_hand[index-1][1])
     # The current cash on hand is extracted from the cash_on_hand list and converted into an integer 
         current_coh= int(cash_on_hand[index][1])
+    # The difference between current cash on hand and previous cash on hand is calculated by substracting them with each other and assigned to a variable called diff
         diff= current_coh - previous_coh
-
+    # If diff is less than zero, meaning that there is deficit on that day
         if diff < 0:
     # False will be assigned to everyday_nodeficit
             everyday_nodeficit= False
@@ -42,6 +48,7 @@ def coh_function():
         
 # If everyday_nodeficit is True which means none of the loop satisfied the condition of diff < 0        
     if everyday_nodeficit == True:
+# Cash on each day is higher than previous day will be appended into the statement list
         statement.append(f"CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
 # the items in the statement list will be returned after the end of all the for loops 
     return statement 
@@ -51,9 +58,8 @@ summary= coh_function()
 
 # Import Path method from Path Library
 from pathlib import Path
-# Creating a text file called cluser_report.txt and stored in a variable called file_path
+# Assigning the summary report text file path to a variable called file path
 file_path = Path.cwd()/"summary_report.txt"
-file_path.touch()
 
 # Open the file in file_path using .open and "a" to append text in the text file
 with file_path.open(mode="a", encoding= "UTF-8") as file:
