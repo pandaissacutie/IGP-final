@@ -36,7 +36,6 @@ def coh_function():
     
     # A for loop is created to loop the position of each nested list of the cash on hand list from a range of 1 to len(Cash_on_hand)
     for index in range(1, len(cash_on_hand)):
-        
     # The previous cash on hand is extracted from the cash_on_hand list using the current loop's index-1 and converted to an integer 
         previous_coh= int(cash_on_hand[index-1][1])
     # The current cash on hand is extracted from the cash_on_hand list and converted into an integer 
