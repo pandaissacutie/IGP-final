@@ -45,7 +45,6 @@ def profitloss_function():
         if diff < 0:
     # False will be assigned to everyday_surplus if diff < 0
             everyday_surplus = False
-        
     # A profit deficit statement with the day and amount of profit deficit will be appended into the statement list
             statement.append(f"[PROFIT DEFICIT] DAY: {int(netprofit[index][0])}, AMOUNT: USD {-(diff)}")
         
