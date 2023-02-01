@@ -56,7 +56,7 @@ def coh_function():
 # The statement will be appended into the statement list
         statement.append(f"CASH ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
     
-# the items in the statement list will be returned after the end of all the for loops 
+# The items in the statement list will be returned after the end of all the for loops 
     return statement 
 
 # The function is assigned to a variable called summary
