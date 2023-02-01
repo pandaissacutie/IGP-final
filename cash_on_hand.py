@@ -49,7 +49,7 @@ def coh_function():
             everyday_nodeficit= False
         
     # A cash deficit statement with the day and amount of cash deficit will be appended into the statement list
-            statement.append(f"[CASH DEFICIT]:DAY {(cash_on_hand[index][0])}, AMOUNT: USD {-(diff)}")
+            statement.append(f"[CASH DEFICIT] DAY: {(cash_on_hand[index][0])}, AMOUNT: USD {-(diff)}")
         
 # If everyday_nodeficit is True, it would mean that none of the loop satisfied the condition of diff < 0        
     if everyday_nodeficit == True:      
