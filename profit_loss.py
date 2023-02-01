@@ -41,7 +41,7 @@ def profitloss_function():
     # To calculate the variable called diff, previous net profit is deducted from current net profit
         diff= current_netprofit - previous_netprofit
         
-    # If diff is less than zero, there is deficit a on that day
+    # If diff is less than zero, there is a deficit on that day
         if diff < 0:
     # False will be assigned to everyday_surplus if diff < 0
             everyday_surplus = False
