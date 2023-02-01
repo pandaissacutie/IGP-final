@@ -44,7 +44,7 @@ def coh_function():
         diff= current_coh - previous_coh
         
     # If diff is less than zero, there is deficit a on that day
-        if diff < 0  
+        if diff < 0:
     # False will be assigned to everyday_nodeficit if diff < 0
             everyday_nodeficit= False
         
