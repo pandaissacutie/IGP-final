@@ -27,7 +27,7 @@ def coh_function():
     If all the cash on hand on the current day is higher than the previous day (everyday deficit is True), the cash on each day will be higher than the previous day.
     '''
 
-    # Assigning True to a variable called everyday_coh to check whether everyday has a deficit is true or false
+    # Assigning True to a variable called everyday_nodeficit to check whether it is true or false
     everyday_nodeficit= True
     # Creating an empty list to store the final statement 
     statement= []
