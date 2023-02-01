@@ -32,13 +32,13 @@ def profitloss_function():
     # Creating an empty list to store the final statement 
     statement= []
     
-     # A for loop is created to loop the position of each nested list of the cash on hand list from a range of 1 to len(Cash_on_hand)
+     # A for loop is created to loop the position of each nested list in the net profit list from a range of 1 to len(Cash_on_hand)
     for index in range(1, len(netprofit)):
     # The previous net profit is extracted from the netprofit list using the current loop's index-1 and converted to integer 
         previous_netprofit= int(netprofit[index-1][1])
     # The current net profit is extracted from the netprofit list and converted into an integer 
         current_netprofit= int(netprofit[index][1])
-    # To calculate the variable called diff, previous cash on hand is deducted from current cash on hand
+    # To calculate the variable called diff, previous net profit is deducted from current net profit
         diff= current_netprofit - previous_netprofit
         
     # If diff is less than zero, there is deficit a on that day
@@ -49,7 +49,7 @@ def profitloss_function():
     # A profit deficit statement with the day and amount of profit deficit will be appended into the statement list
             statement.append(f"[PROFIT DEFICIT] DAY: {int(netprofit[index][0])}, AMOUNT: USD {-(diff)}")
         
-    # If everyday_surplus is True, it would mean that none of the loop satisfied the condition of diff < 0 
+    # If everyday_surplus is True, it would mean that none of the loops satisfied the condition of diff < 0 
     if everyday_surplus == True:
     # A net profit surplus statement will be appended into the statement list
         statement.append(f"[NET PROFIT SURPLUS] NET PROFIT IN EACH DAY IS HIGHER THAN THE PREVIOUS DAY")
@@ -69,7 +69,6 @@ file_path = Path.cwd()/"summary_report.txt"
 
 # Open the file in file_path using .open and "a" to append text in the text file
 with file_path.open(mode="a", encoding= "UTF-8") as file:
-    
 # A for loop is created to ensure that each item in the statement list is printed on a different line
     for item in summary:
         file.write(f'{item}\n')

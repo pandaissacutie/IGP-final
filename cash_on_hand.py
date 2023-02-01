@@ -24,8 +24,8 @@ def coh_function():
     '''
     This function does not accepts any parameter 
     This function will calculate the difference in Cash-on-Hand and check whether everyday no deficit is true or false
-    If the cash on hand on the current day is lower than the previous day (everyday no deficit is False), this function will return cash deficit on the current day and the difference in cash on hand.
-    If all the cash on hand on the current day is higher than the previous day (everyday deficit is True), the cash on each day will be higher than the previous day.
+    If the cash on hand on the current day is lower than the previous day (everyday deficit is False), this function will return cash deficit on the current day and the difference in cash on hand.
+    If all the cash on hand on the current day is higher than the previous day (everyday no deficit is True), the cash on each day will be higher than the previous day.
     '''
 
     # Assigning True to a variable called everyday_nodeficit to check whether it is true or false
@@ -34,7 +34,7 @@ def coh_function():
     # Creating an empty list to store the final statement 
     statement= []
     
-    # A for loop is created to loop the position of each nested list of the cash on hand list from a range of 1 to len(Cash_on_hand)
+    # A for loop is created to loop the position of each nested list in the cash on hand list from a range of 1 to len(Cash_on_hand)
     for index in range(1, len(cash_on_hand)):
     # The previous cash on hand is extracted from the cash_on_hand list using the current loop's index-1 and converted to an integer 
         previous_coh= int(cash_on_hand[index-1][1])
@@ -71,7 +71,6 @@ file_path = Path.cwd()/"summary_report.txt"
 
 # Open the file in file_path using .open and "a" to append text in the text file
 with file_path.open(mode="a", encoding= "UTF-8") as file:
-    
 # A for loop is created to ensure that each item in the statement list is printed on a different line
     for item in summary:
         file.write(f'{item}\n')

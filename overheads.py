@@ -41,7 +41,7 @@ def overheads_function():
     # The statement will be appended into the statement list
            statement.append(f'[HIGHEST OVERHEADS] {data[0]}: {highest_overheads_percentage}%')
         
-    # The function will return statement at the end of all the loops
+    # The function will return the items in the statement at the end of all the loops
     return statement 
 
 # The function is assigned to a variable called summary
@@ -56,6 +56,7 @@ file_path.touch()
 
 # Open the file in file_path using .open and "a" to append text in the text file
 with file_path.open(mode="a", encoding= "UTF-8") as file:
+# A for loop is created to ensure that each item in the statement list is printed on a different line
     for item in summary:
         file.write(f'{item}\n')
 
