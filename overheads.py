@@ -33,12 +33,12 @@ def overheads_function():
     for data in overheads:
     # Append the percentage of overheads into the percentage_of_overheads list
         percentage_of_overheads.append(float(data[1]))
-    # Using max function to identify the highest overhead's percentage and assigning it to a variable called highest_overheads_percentage
+    # Using max function to identify the highest overhead's percentage, then assigning it to a variable called highest_overheads_percentage
         highest_overheads_percentage = max(percentage_of_overheads)
         
     # If the highest overheads percentage is the same as the percentage of the item in data, the name of the highest overheads will be identified 
         if float(data[1]) == highest_overheads_percentage:
-    # A highest overheads statement will be appended into the statement list
+    # The statement will be appended into the statement list
            statement.append(f'[HIGHEST OVERHEADS] {data[0]}: {highest_overheads_percentage}%')
         
     # The function will return statement at the end of all the loops
