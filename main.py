@@ -1,5 +1,5 @@
 # Modularizing the program
-# Importing the 3 python file containing the 3 functions
+# Importing the 3 python file which contains the 3 functions
 import overheads, cash_on_hand, profit_loss
 
 # Creating a function called main to combine all the 3 functions
